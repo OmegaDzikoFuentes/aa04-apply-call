@@ -6,5 +6,9 @@ function say(name) {
 helloMessage = { message: 'Hello,' };
 heyThereMessage = { message: 'Hey there,' };
 
-say(helloMessage, "John");
-say(heyThereMessage, "Michael");
+const sayHello = say.bind(helloMessage);
+
+const sayHeyThere = say.bind(heyThereMessage);
+
+sayHello("John");
+sayHeyThere("Michael");
